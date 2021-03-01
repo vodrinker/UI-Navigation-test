@@ -9,10 +9,12 @@ public class GUIController : MonoBehaviour
 
     private void Awake()
     {
+        DisableOnStart.SetActive(false);
         Insntace = this;
     }
     #endregion
 
+    [SerializeField] private GameObject DisableOnStart;
 
     [SerializeField] private RectTransform ViewsParent;
     [SerializeField] private GameObject InGameGui;

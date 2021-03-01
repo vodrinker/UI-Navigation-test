@@ -636,6 +636,30 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_Text
+      value: "SIEMKA!\nO TO PRZED TOB\u0104 PROJEKT W KT\xD3RYM MASZ ZA ZADANIE PRZYSTOSOWA\u0106
+        CA\u0141EJ UI POD KONTROLLER. ZR\xD3B TAK ABY DZIA\u0141A\u0141 BEZ KONIECZNO\u015ACI
+        U\u017BYWANIA MYSZKI. PO ZAKO\u0143CZENIU SWOJEGO ROZWI\u0104ZANIA, PRZEANALIZUJEMY
+        JE ORAZ PRZEDSTAWIMY CI NASZE ROZWI\u0104ZANIE W CELU POKAZANIA DOBRYCH PRAKTYKT
+        PRZY TAKICH PROBLEMACH\n"
+      objectReference: {fileID: 0}
     - target: {fileID: 4246480897310824689, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -735,6 +759,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903552560412150488, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_EffectColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903552560412150488, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_EffectColor.g
+      value: 0.8416467
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903552560412150488, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_EffectColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903552560412150488, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_EffectColor.a
+      value: 0.70980394
       objectReference: {fileID: 0}
     - target: {fileID: 7557291510902726083, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
@@ -875,6 +919,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '[MAIN_GUI]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.451496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.451496
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.451496
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e56bfdd5b40390546bd93dc024a6c032, type: 3}
