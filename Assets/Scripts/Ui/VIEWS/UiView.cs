@@ -15,8 +15,6 @@ public class UiView : MonoBehaviour
 
     private UiView ParentView;
     public virtual void Awake()
-
-
     {
         BackButon.onClick.AddListener(()=> DisableView_OnClick(this));
     }
@@ -32,6 +30,11 @@ public class UiView : MonoBehaviour
     private void DisableView_OnClick(UiView viewToDisable)
     {
         viewToDisable.DisableView();
+    }
+
+    public void DestroyView_OnClick(UiView viewToDisable)
+    {
+        viewToDisable.DestroyView();
     }
 
     public void SetParentView(UiView parentView)
@@ -65,6 +68,25 @@ public class UiView : MonoBehaviour
         this.ActiveView(false);      
     }
 
+    public void DestroyView()
+    {
+        if (ParentView != null)
+        {
+            ParentView.ActiveView();
+        }
+
+        Destroy(this.gameObject);
+    }
+
+    public void DisableBackButton()
+    {
+        BackButon.gameObject.SetActive(false);
+    }
+
+    public Button GetBackButton()
+    {
+        return BackButon;
+    }
 }
 
 

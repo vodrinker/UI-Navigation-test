@@ -9,14 +9,18 @@ public class PopUpView : UiView
 
     public GameObject PopUpScreenBlocker;
 
+    public override void Awake()
+    {
+        GetBackButton().onClick.AddListener(() => DestroyView_OnClick(this));
+    }
 
     private void OnEnable()
     {
-        PopUpScreenBlocker.SetActive(true);
+        GUIController.Insntace.ActiveScreenBlocker(true, this);
     }
     private void OnDisable()
     {
-        PopUpScreenBlocker.SetActive(false);
+        GUIController.Insntace.ActiveScreenBlocker(false, this);
     }
 
     [Header("Pop Up Elements")]
@@ -25,13 +29,24 @@ public class PopUpView : UiView
     public Button YesButton;
 
     
-    public void ActivePopUpView(PopUpInformation popUpInfo )
+    public void ActivePopUpView(PopUpInformation popUpInfo)
     {
         ClearPopUp();
         LabelText.text = popUpInfo.Header;
-        MessageText.text = popUpInfo.Message;
-        YesButton.onClick.AddListener(() => popUpInfo.Confirm_OnClick());
-        YesButton.onClick.AddListener(() => DisableView());
+        MessageText.text = popUpInfo.Message;    
+
+        if(popUpInfo.UseOneButton)
+        {
+            DisableBackButton();
+            YesButton.GetComponentInChildren<Text>().text = "OK";
+        }
+
+        if(popUpInfo.Confirm_OnClick != null)
+             YesButton.onClick.AddListener(() => popUpInfo.Confirm_OnClick());  
+
+        if(popUpInfo.DisableOnConfirm)
+            YesButton.onClick.AddListener(() => DestroyView());
+
         ActiveView();
 
     }
@@ -47,6 +62,8 @@ public class PopUpView : UiView
 
 public struct PopUpInformation
 {
+    public bool UseOneButton;
+    public bool DisableOnConfirm;
     public string Header;
     public string Message;
     public Action Confirm_OnClick;

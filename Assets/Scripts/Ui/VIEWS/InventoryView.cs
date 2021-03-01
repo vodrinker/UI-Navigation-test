@@ -15,12 +15,13 @@ public class InventoryView : UiView
     [SerializeField] private Button DestroyButton;
 
     private RectTransform ContentParent;
-    private GameObject CurrentSelectedItem;
+    private GameObject CurrentSelectedGameObject;
+    private SoulInformation CurrentSoulInformation;
     public override void Awake()
     {
         base.Awake();
         ContentParent = (RectTransform)SoulItemPlaceHolder.transform.parent;
-        InitializeInventoryItems();      
+        InitializeInventoryItems();
     }
 
     private void InitializeInventoryItems()
@@ -45,14 +46,16 @@ public class InventoryView : UiView
         Avatar.sprite = null;
         SetupUseButton(false);
         SetupDestroyButton(false);
-        CurrentSelectedItem = null;
+        CurrentSelectedGameObject = null;
+        CurrentSoulInformation = null;
 
     }
 
 
     public void SoulItem_OnClick(SoulInformation soulInformation)
     {
-        CurrentSelectedItem = soulInformation.gameObject;
+        CurrentSoulInformation = soulInformation;
+        CurrentSelectedGameObject = soulInformation.gameObject;
         SetupSoulInformation(soulInformation.soulItem);
     }
 
@@ -66,31 +69,60 @@ public class InventoryView : UiView
         SetupDestroyButton(soulItem.CanBeDestroyed);
     }
 
-    private void UseCurrentSoul()
+
+    private void CantUseCurrentSoul()
     {
-        Destroy(CurrentSelectedItem);
-        ClearSoulInformation();
+        PopUpInformation popUpInfo = new PopUpInformation
+        {
+            DisableOnConfirm = true,
+            UseOneButton = true,
+            Header = "CAN'T USE",
+            Message = "THIS SOUL CANNOT BE USED IN THIS LOCALIZATION"
+
+        };
+        GUIController.Insntace.ShowPopUpMessage(popUpInfo);
     }
+
+    private void UseCurrentSoul(bool canUse)
+    {
+        if (!canUse)
+        {
+            CantUseCurrentSoul();
+        }
+        else
+        {
+
+            //USE SOUL
+            Destroy(CurrentSelectedGameObject);
+            ClearSoulInformation();
+        }
+
+           
+    }
+
 
     private void DestroyCurrentSoul()
     {
-        Destroy(CurrentSelectedItem);
+        Destroy(CurrentSelectedGameObject);
         ClearSoulInformation();
     }
 
     private void SetupUseButton(bool active)
     {
-        if (!active)
-            UseButton.onClick.RemoveAllListeners();
-        else
+        UseButton.onClick.RemoveAllListeners();
+        if (active)
         {
-            PopUpInformation popUpInfo = new PopUpInformation {
+            bool isInCorrectLocalization = GameControlller.Instance.IsCurrentLocalization(CurrentSoulInformation.soulItem.UsableInLocalization);
+            PopUpInformation popUpInfo = new PopUpInformation
+            {
+                DisableOnConfirm = isInCorrectLocalization,
+                UseOneButton = false,
                 Header = "USE ITEM",
-                Message = "Are you sure you want to USE: " + Name.text + " ?",
-                Confirm_OnClick = () => UseCurrentSoul()
+                Message = "Are you sure you want to USE: " + CurrentSoulInformation.soulItem.Name + " ?",
+                Confirm_OnClick = () => UseCurrentSoul(isInCorrectLocalization)
 
             };
-            UseButton.onClick.AddListener(() => GUIController.Insntace.PopUp.ActivePopUpView(popUpInfo));
+            UseButton.onClick.AddListener(() => GUIController.Insntace.ShowPopUpMessage(popUpInfo));
         }
 
 
@@ -101,18 +133,19 @@ public class InventoryView : UiView
 
     private void SetupDestroyButton(bool active)
     {
-        if (!active)
-            DestroyButton.onClick.RemoveAllListeners();
-        else
+        DestroyButton.onClick.RemoveAllListeners();
+        if (active)    
         {
             PopUpInformation popUpInfo = new PopUpInformation
             {
+                DisableOnConfirm = true,
+                UseOneButton = false,
                 Header = "DESTROY ITEM",
                 Message = "Are you sure you want to DESTROY: " + Name.text + " ?",
                 Confirm_OnClick = () => DestroyCurrentSoul()
 
             };
-            DestroyButton.onClick.AddListener(() => GUIController.Insntace.PopUp.ActivePopUpView(popUpInfo));
+            DestroyButton.onClick.AddListener(() => GUIController.Insntace.ShowPopUpMessage(popUpInfo));
         }
 
         DestroyButton.gameObject.SetActive(active);

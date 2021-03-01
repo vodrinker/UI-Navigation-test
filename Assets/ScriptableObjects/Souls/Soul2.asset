@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13014845c249e02489778bb7e3c6a558, type: 3}
   m_Name: Soul2
   m_EditorClassIdentifier: 
+  UsableInLocalization: 1
   Avatar: {fileID: 21300000, guid: 90adab7670bee0842aef077b67e1ded1, type: 3}
   Name: Ancient
   Description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

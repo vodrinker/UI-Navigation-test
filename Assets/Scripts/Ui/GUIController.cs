@@ -14,8 +14,16 @@ public class GUIController : MonoBehaviour
     #endregion
 
 
-    public GameObject InGameGui;
-    public PopUpView PopUp;
+    [SerializeField] private RectTransform ViewsParent;
+    [SerializeField] private GameObject InGameGui;
+    [SerializeField] private PopUpView PopUp;
+    [SerializeField] private PopUpScreenBlocker ScreenBlocker;
+
+    private void Start()
+    {
+        if (ScreenBlocker)
+            ScreenBlocker.InitBlocker();
+    }
 
 
     private void ActiveInGameGUI(bool active)
@@ -26,7 +34,17 @@ public class GUIController : MonoBehaviour
 
     public void ShowPopUpMessage(PopUpInformation popUpInfo)
     {
-        PopUp.ActivePopUpView(popUpInfo);
+
+        PopUpView newPopUp = Instantiate(PopUp, ViewsParent) as PopUpView;
+        newPopUp.ActivePopUpView(popUpInfo);
+    }
+   
+    public void ActiveScreenBlocker(bool active,PopUpView popUpView)
+    {
+        if (active)
+            ScreenBlocker.AddPopUpView(popUpView);
+        else
+            ScreenBlocker.RemovePopUpView(popUpView);
     }
 
 

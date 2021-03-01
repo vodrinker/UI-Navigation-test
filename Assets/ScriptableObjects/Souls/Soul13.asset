@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13014845c249e02489778bb7e3c6a558, type: 3}
   m_Name: Soul13
   m_EditorClassIdentifier: 
+  UsableInLocalization: 1
   Avatar: {fileID: 21300000, guid: af9ba113fa445694bafd89441179b7df, type: 3}
   Name: Skele-heart
   Description: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
