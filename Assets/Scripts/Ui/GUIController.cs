@@ -9,15 +9,15 @@ public class GUIController : MonoBehaviour
 
     private void Awake()
     {
-        DisableOnStart.SetActive(false);
+        DisableOnStartObject.SetActive(false);
         Insntace = this;
     }
     #endregion
 
-    [SerializeField] private GameObject DisableOnStart;
+    [SerializeField] private GameObject DisableOnStartObject;
 
     [SerializeField] private RectTransform ViewsParent;
-    [SerializeField] private GameObject InGameGui;
+    [SerializeField] private GameObject InGameGuiObject;
     [SerializeField] private PopUpView PopUp;
     [SerializeField] private PopUpScreenBlocker ScreenBlocker;
 
@@ -30,7 +30,7 @@ public class GUIController : MonoBehaviour
 
     private void ActiveInGameGUI(bool active)
     {
-        InGameGui.SetActive(active);
+        InGameGuiObject.SetActive(active);
     }
 
 
@@ -50,12 +50,14 @@ public class GUIController : MonoBehaviour
     }
 
 
-    #region On Clicks
+    #region IN GAME GUI Clicks
     public void InGameGUIButton_OnClick(UiView viewToActive)
     {
         viewToActive.ActiveView(() => ActiveInGameGUI(true));
 
         ActiveInGameGUI(false);
+        GameControlller.Instance.IsPaused = true;
+
     }
     #endregion
 

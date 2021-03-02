@@ -38,9 +38,32 @@ public class GameControlller : MonoBehaviour
         }
     }
 
+    private bool isPaused;
+
+    public bool IsPaused
+    {
+
+        get
+        {
+            return isPaused;
+        }
+        set
+        {
+            isPaused = value;
+            if (isPaused)
+                Time.timeScale = 0;
+            else
+                Time.timeScale = 1;
+        }
+    }
+    
+
 
     public bool IsCurrentLocalization(GameLocalization localiztion)
     {
         return CurrentGameLocalization == localiztion;
     }
+ 
 }
+
+

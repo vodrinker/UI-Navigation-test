@@ -9,7 +9,7 @@ public class UiView : MonoBehaviour
 
     [Header("UI VIEW elements")]
 
-   
+    [SerializeField] private bool UnpauseOnClose = false;
     [SerializeField] private bool CloseOnNewView = true;
     [SerializeField] private Button BackButon;
 
@@ -64,6 +64,10 @@ public class UiView : MonoBehaviour
         {
             ParentView.ActiveView();
         }
+
+
+        if(UnpauseOnClose)
+            GameControlller.Instance.IsPaused = false;
 
         this.ActiveView(false);      
     }
