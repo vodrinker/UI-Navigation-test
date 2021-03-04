@@ -15,7 +15,21 @@ public enum GameLocalization
 public class GameControlller : MonoBehaviour
 {
     #region Singleton
-    public static GameControlller Instance;
+    private static GameControlller instance;
+
+    public static GameControlller Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<GameControlller>();
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
 
     private void Awake()
     {

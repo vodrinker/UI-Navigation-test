@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class SoulController : MonoBehaviour
 {
-    public static SoulController Instance;
+    private static SoulController instance;
+    public static SoulController Instance
+    {
+        get
+        {
+            if (instance == null)
+                instance = FindObjectOfType<SoulController>();
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
 
     private void Awake()
     {
         Instance = this;
     }
+
+   
+
 
     public List<SoulItem> Souls;
 }
