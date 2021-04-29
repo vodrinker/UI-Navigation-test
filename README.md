@@ -1,7 +1,7 @@
 INSTRUKCJA DLA WDROŻENIOWCÓW
 
 1. Wersja unity 2019+
-2. Pobierz sobie zipa (chyba ogarniasz)
+2. Pobierz sobie zipa (chyba ze ogarniasz gita to zrob klona)
 3. Po odpaleniu projektu otwórz sobię scenę o nazwaie "pobieranieprzyciskowprzyklad"
     - na niej znajdzisez przykładowe sposoby przechowywania listy przcyisków, wszystko jest w skrypcie "gettingbuttons" który jest w tym samym folderze co scena
 4. Nastepna przykładowa scena to "uzywaniekeycodeprzyklad" i analogicznie główny skrypt jest w tym samym folderze
