@@ -856,10 +856,10 @@ PrefabInstance:
       value: "G\u0141\xD3WNE ZADANIA:\n1. Zbudowa\u0107 projekt na Nintendo Switch\n2.
         Zrobi\u0107 nawigacje w pauzie\n3. Zrobi\u0107 nawigacje w inventory i dla
         pop-upow\n4. Zrobi\u0107 nawigacj\u0119 dla walki\n5. Doda\u0107 BRP framework
-        i sprawdzi\u0107, czy nawigacja poprawnie dziala na konsoli Switch\n5. Doda\u0107
-        zapis ustawie\u0144 do playerprefsow\n\nWszystkie te elementy musz\u0105
-        dzia\u0142a\u0107 poprawnie na konsoli, oraz na edytorze bez konieczno\u015Bci
-        u\u017Cywania myszki"
+        i sprawdzi\u0107, czy nawigacja poprawnie dziala na konsoli Switch\n6. Doda\u0107
+        zapis ustawie\u0144 do playerprefsow\n7. Doda\u0107 wibracje\n\nWszystkie
+        te elementy musz\u0105 dzia\u0142a\u0107 poprawnie na konsoli, oraz na edytorze
+        bez konieczno\u015Bci u\u017Cywania myszki"
       objectReference: {fileID: 0}
     - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
