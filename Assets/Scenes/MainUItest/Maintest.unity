@@ -850,6 +850,22 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_Text
+      value: "G\u0141\xD3WNE ZADANIA:\n1. Zbudowa\u0107 projekt na Nintendo Switch\n2.
+        Zrobi\u0107 nawigacje w pauzie\n3. Zrobi\u0107 nawigacje w inventory i dla
+        pop-upow\n4. Zrobi\u0107 nawigacj\u0119 dla walki\n5. Doda\u0107 BRP framework
+        i sprawdzi\u0107, czy nawigacja poprawnie dziala na konsoli Switch\n5. Doda\u0107
+        zapis ustawie\u0144 do playerprefsow\n\nWszystkie te elementy musz\u0105
+        dzia\u0142a\u0107 poprawnie na konsoli, oraz na edytorze bez konieczno\u015Bci
+        u\u017Cywania myszki"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3371887093758529593, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4070091252715943934, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1075,6 +1091,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8146150602394358071, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00041859652
+      objectReference: {fileID: 0}
     - target: {fileID: 8146150602791711613, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1138,6 +1159,11 @@ PrefabInstance:
     - target: {fileID: 8146150604104137997, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8146150604104137997, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8146150604206578817, guid: e56bfdd5b40390546bd93dc024a6c032,
@@ -1249,6 +1275,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: '[MAIN_GUI]'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -71.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -533.2567
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25.442
+      objectReference: {fileID: 0}
+    - target: {fileID: 8463539187661595718, guid: e56bfdd5b40390546bd93dc024a6c032,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -635.0569
       objectReference: {fileID: 0}
     - target: {fileID: 8801312614349466923, guid: e56bfdd5b40390546bd93dc024a6c032,
         type: 3}
