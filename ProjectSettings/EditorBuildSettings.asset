@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/TutorialScenes/PobieraniePrzyciskowPrzyklad/PobieraniePrzyciskowPrzyklad.unity
-    guid: a831c8caa68f2b74b8661856dfc0f8d2
-  - enabled: 0
-    path: Assets/Scenes/TutorialScenes/UzywanieKeyCodePrzyklad/UzywanieKeyCodePrzyklad.unity
-    guid: 9ae5912ab9b4a9a4fb651bbb648a3d46
-  - enabled: 0
-    path: Assets/Scenes/TutorialScenes/NawigacjaPrzyciskow/NawigacjaPoPrzyciskach.unity
-    guid: 75344e52b4870ab498f1d7405bf9d030
   - enabled: 1
     path: Assets/Scenes/MainUItest/Maintest.unity
     guid: 67f7d6fd200a37e49b98182816df7cb3

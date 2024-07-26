@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryView : UiView
@@ -32,6 +33,7 @@ public class InventoryView : UiView
             newSoul.SetSoulItem(SoulController.Instance.Souls[i], () => SoulItem_OnClick(newSoul));
         }
         SoulItemPlaceHolder.gameObject.SetActive(false);
+
     }
 
     private void OnEnable()
@@ -69,6 +71,10 @@ public class InventoryView : UiView
         SetupDestroyButton(soulItem.CanBeDestroyed);
     }
 
+    private void SelectElement(int index)
+    {
+
+    }
 
     private void CantUseCurrentSoul()
     {
