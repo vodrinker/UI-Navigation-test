@@ -41,12 +41,11 @@ public class EnenmiesController : MonoBehaviour
         GameEvents.EnemyKilled -= EnemyKilled;
     }
 
-    private void EnemyKilled(Enemy enemy)
+    private void EnemyKilled(IEnemy enemy)
     {
         FreeSpawnPoint(enemy.GetEnemyPosition());
         DestroyKilledEnemy(enemy.GetEnemyObject());
         StartCoroutine(SpawnEnemyViaCor());
-        
     }
 
     private void SpawnEnemies()
@@ -65,7 +64,7 @@ public class EnenmiesController : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        if(CurrentEnemies >= MaxEnemies)
+        if (CurrentEnemies >= MaxEnemies)
         {
             Debug.LogError("Max Enemies reached! Kil some to spawn new");
             return;
@@ -97,9 +96,9 @@ public class EnenmiesController : MonoBehaviour
     }
     private void FreeSpawnPoint(SpawnPoint spawnPoint)
     {
-        for(int i =0;i<SpawnPoints.Count;i++)
+        for (int i = 0; i < SpawnPoints.Count; i++)
         {
-            if(spawnPoint == SpawnPoints[i])
+            if (spawnPoint == SpawnPoints[i])
             {
                 SpawnPoints[i].IsOccupied = false;
                 CurrentEnemies--;
@@ -108,23 +107,8 @@ public class EnenmiesController : MonoBehaviour
         }
     }
 
-
     private void ConfigureEnemiesController()
     {
-        if (SpawnPoints != null)
-            MaxEnemies = SpawnPoints.Count;
-        else
-            MaxEnemies = 3;
+        MaxEnemies = SpawnPoints != null ? SpawnPoints.Count : 3;
     }
-
-
-
-}
-
-
-[System.Serializable]
-public class SpawnPoint
-{
-    public Transform Position;
-    public bool IsOccupied;
 }

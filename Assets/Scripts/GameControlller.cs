@@ -1,16 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-
-public enum GameLocalization
-{
-    SWAMPS,
-    DUNGEON,
-    CASTLE,
-    CITY,
-    TOWER
-}
+﻿using UnityEngine;
 
 public class GameControlller : MonoBehaviour
 {
@@ -64,10 +52,7 @@ public class GameControlller : MonoBehaviour
         set
         {
             isPaused = value;
-            if (isPaused)
-                Time.timeScale = 0;
-            else
-                Time.timeScale = 1;
+            Time.timeScale = isPaused ? 0 : 1;
         }
     }
     
@@ -77,7 +62,4 @@ public class GameControlller : MonoBehaviour
     {
         return CurrentGameLocalization == localiztion;
     }
- 
 }
-
-

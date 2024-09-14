@@ -1,10 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SoulController : MonoBehaviour
 {
     private static SoulController instance;
+
     public static SoulController Instance
     {
         get
@@ -19,13 +19,10 @@ public class SoulController : MonoBehaviour
         }
     }
 
+    public List<SoulItem> Souls;
+
     private void Awake()
     {
         Instance = this;
     }
-
-   
-
-
-    public List<SoulItem> Souls;
 }

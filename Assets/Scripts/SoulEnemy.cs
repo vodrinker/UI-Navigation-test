@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class SoulEnemy : MonoBehaviour , Enemy
+public class SoulEnemy: MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject InteractionPanelObject;
     [SerializeField] private GameObject ActionsPanelObject;
@@ -10,8 +8,7 @@ public class SoulEnemy : MonoBehaviour , Enemy
 
     private SpawnPoint EnemyPosition;
 
-   
-    public void SetupEnemy(Sprite sprite,SpawnPoint spawnPoint)
+    public void SetupEnemy(Sprite sprite, SpawnPoint spawnPoint)
     {
         EnemySpriteRenderer.sprite = sprite;
         EnemyPosition = spawnPoint;
@@ -25,7 +22,7 @@ public class SoulEnemy : MonoBehaviour , Enemy
 
     public GameObject GetEnemyObject()
     {
-        return this.gameObject;
+        return gameObject;
     }
 
     private void ActiveCombatWithEnemy()
@@ -46,17 +43,13 @@ public class SoulEnemy : MonoBehaviour , Enemy
 
     private void UseBow()
     {
-        // USE BOW
         GameEvents.EnemyKilled?.Invoke(this);
     }
 
     private void UseSword()
     {
         GameEvents.EnemyKilled?.Invoke(this);
-        // USE SWORD
     }
-
-
 
     #region OnClicks
     public void Combat_OnClick()
@@ -74,13 +67,4 @@ public class SoulEnemy : MonoBehaviour , Enemy
         UseSword();
     }
     #endregion
-
-
-}
-
-
-public interface Enemy
-{
-    SpawnPoint GetEnemyPosition();
-    GameObject GetEnemyObject();
 }
