@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,15 +9,11 @@ public class SoulInformation : MonoBehaviour
 
     [HideInInspector] public SoulItem soulItem;
 
-
     public void SetSoulItem(SoulItem _soulItem, Action OnSoulClick = null)
     {
         soulItem = _soulItem;
         MainImage.sprite = soulItem.Avatar;
-        if (OnSoulClick !=null)
-            SoulButton.onClick.AddListener(()=>OnSoulClick());
+        if (OnSoulClick != null)
+            SoulButton.onClick.AddListener(() => OnSoulClick());
     }
-
-
-
 }

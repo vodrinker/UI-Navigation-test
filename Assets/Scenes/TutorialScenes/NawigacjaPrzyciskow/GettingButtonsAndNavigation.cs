@@ -23,7 +23,7 @@ public class GettingButtonsAndNavigation : MonoBehaviour
 
 
 
-   
+
     private bool DelayInputNavigation = false;
 
 
@@ -82,7 +82,7 @@ public class GettingButtonsAndNavigation : MonoBehaviour
     {
         CurrentSelectedIndex--;
         SetCurrentSelectedGameObject(true);
-        
+
 
 
         //PRZYKŁAD UŻYCIA KUROTYNY
@@ -160,7 +160,7 @@ public class GettingButtonsAndNavigation : MonoBehaviour
         }
 
 
-        ButtonsList = new List<Button>(); 
+        ButtonsList = new List<Button>();
         foreach (Transform child in ContentWithButtons.transform)
         {
             if (child.GetComponent<Button>() != null)

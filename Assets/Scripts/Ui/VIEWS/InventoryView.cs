@@ -1,12 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InventoryView : UiView
 {
-
     [Header("Inventory Elements")]
     [SerializeField] private SoulInformation SoulItemPlaceHolder;
     [SerializeField] private Text Description;
@@ -18,6 +14,7 @@ public class InventoryView : UiView
     private RectTransform ContentParent;
     private GameObject CurrentSelectedGameObject;
     private SoulInformation CurrentSoulInformation;
+
     public override void Awake()
     {
         base.Awake();
@@ -53,14 +50,12 @@ public class InventoryView : UiView
 
     }
 
-
     public void SoulItem_OnClick(SoulInformation soulInformation)
     {
         CurrentSoulInformation = soulInformation;
         CurrentSelectedGameObject = soulInformation.gameObject;
         SetupSoulInformation(soulInformation.soulItem);
     }
-
 
     private void SetupSoulInformation(SoulItem soulItem)
     {
@@ -102,10 +97,7 @@ public class InventoryView : UiView
             Destroy(CurrentSelectedGameObject);
             ClearSoulInformation();
         }
-
-           
     }
-
 
     private void DestroyCurrentSoul()
     {
@@ -131,16 +123,13 @@ public class InventoryView : UiView
             UseButton.onClick.AddListener(() => GUIController.Insntace.ShowPopUpMessage(popUpInfo));
         }
 
-
-
         UseButton.gameObject.SetActive(active);
-
     }
 
     private void SetupDestroyButton(bool active)
     {
         DestroyButton.onClick.RemoveAllListeners();
-        if (active)    
+        if (active)
         {
             PopUpInformation popUpInfo = new PopUpInformation
             {
@@ -156,7 +145,4 @@ public class InventoryView : UiView
 
         DestroyButton.gameObject.SetActive(active);
     }
-
-
-
 }

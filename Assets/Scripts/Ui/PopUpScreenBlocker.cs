@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PopUpScreenBlocker : MonoBehaviour
 {
-
     [SerializeField] private Image ScreenBlocker;
     private List<PopUpView> ActivePopUps;
     private bool InitDone;
@@ -24,13 +22,12 @@ public class PopUpScreenBlocker : MonoBehaviour
         InitDone = true;
         ScreenBlocker.enabled = false;
         ActivePopUps = new List<PopUpView>();
-        gameObject.SetActive(true);     
+        gameObject.SetActive(true);
     }
-
 
     public void AddPopUpView(PopUpView popUp)
     {
-        if(!ActivePopUps.Contains(popUp))
+        if (!ActivePopUps.Contains(popUp))
         {
             ActivePopUps.Add(popUp);
         }
@@ -46,10 +43,8 @@ public class PopUpScreenBlocker : MonoBehaviour
         UpdateScreenBlockerState();
     }
 
-
     public void UpdateScreenBlockerState()
     {
         ScreenBlocker.enabled = ActivePopUps.Count > 0;
     }
-
 }

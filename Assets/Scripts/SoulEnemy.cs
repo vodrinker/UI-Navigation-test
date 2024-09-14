@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class SoulEnemy: MonoBehaviour, IEnemy
+public class SoulEnemy : MonoBehaviour, IEnemy
 {
     [SerializeField] private GameObject InteractionPanelObject;
     [SerializeField] private GameObject ActionsPanelObject;

@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PopUpView : UiView
 {
-
     public GameObject PopUpScreenBlocker;
 
     public override void Awake()
@@ -28,29 +25,27 @@ public class PopUpView : UiView
     public Text MessageText;
     public Button YesButton;
 
-    
     public void ActivePopUpView(PopUpInformation popUpInfo)
     {
         ClearPopUp();
         LabelText.text = popUpInfo.Header;
-        MessageText.text = popUpInfo.Message;    
+        MessageText.text = popUpInfo.Message;
 
-        if(popUpInfo.UseOneButton)
+        if (popUpInfo.UseOneButton)
         {
             DisableBackButton();
             YesButton.GetComponentInChildren<Text>().text = "OK";
         }
 
-        if(popUpInfo.Confirm_OnClick != null)
-             YesButton.onClick.AddListener(() => popUpInfo.Confirm_OnClick());  
+        if (popUpInfo.Confirm_OnClick != null)
+            YesButton.onClick.AddListener(() => popUpInfo.Confirm_OnClick());
 
-        if(popUpInfo.DisableOnConfirm)
+        if (popUpInfo.DisableOnConfirm)
             YesButton.onClick.AddListener(() => DestroyView());
 
         ActiveView();
 
     }
-
 
     private void ClearPopUp()
     {

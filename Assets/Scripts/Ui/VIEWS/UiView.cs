@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UiView : MonoBehaviour
 {
-
     [Header("UI VIEW elements")]
 
     [SerializeField] private bool UnpauseOnClose = false;
@@ -16,16 +13,16 @@ public class UiView : MonoBehaviour
     private UiView ParentView;
     public virtual void Awake()
     {
-        BackButon.onClick.AddListener(()=> DisableView_OnClick(this));
+        BackButon.onClick.AddListener(() => DisableView_OnClick(this));
     }
 
     public void ActiveView_OnClick(UiView viewToActive)
     {
         viewToActive.SetParentView(this);
         viewToActive.ActiveView();
-        this.ActiveView(!CloseOnNewView);
+        ActiveView(!CloseOnNewView);
     }
-   
+
 
     private void DisableView_OnClick(UiView viewToDisable)
     {
@@ -40,12 +37,12 @@ public class UiView : MonoBehaviour
     public void SetParentView(UiView parentView)
     {
         ParentView = parentView;
-        
+
     }
 
     public void ActiveView(bool active)
     {
-        this.gameObject.SetActive(active);
+        gameObject.SetActive(active);
     }
 
     public void ActiveView(Action onBackButtonAction = null)
@@ -54,8 +51,8 @@ public class UiView : MonoBehaviour
             BackButon.onClick.AddListener(() => onBackButtonAction());
 
 
-        if(!gameObject.activeSelf)
-            this.ActiveView(true);
+        if (!gameObject.activeSelf)
+            ActiveView(true);
     }
 
     public void DisableView()
@@ -66,10 +63,10 @@ public class UiView : MonoBehaviour
         }
 
 
-        if(UnpauseOnClose)
+        if (UnpauseOnClose)
             GameControlller.Instance.IsPaused = false;
 
-        this.ActiveView(false);      
+        ActiveView(false);
     }
 
     public void DestroyView()
@@ -79,7 +76,7 @@ public class UiView : MonoBehaviour
             ParentView.ActiveView();
         }
 
-        Destroy(this.gameObject);
+        Destroy(gameObject);
     }
 
     public void DisableBackButton()
@@ -92,7 +89,3 @@ public class UiView : MonoBehaviour
         return BackButon;
     }
 }
-
-
-
-

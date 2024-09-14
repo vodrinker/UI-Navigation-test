@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UzycieKeyCode : MonoBehaviour
@@ -94,7 +92,7 @@ public class UzycieKeyCode : MonoBehaviour
             Debug.Log("Text przucisku nie został przypisany jako argument eventu, zatrzymuje działanie metody");
             return;
         }
-        
+
 
         CountClicks_FirstButton++;
         ButtonText.text = "Nacisnąłeś " + FirstButtonKeyCode + ": " + CountClicks_FirstButton;

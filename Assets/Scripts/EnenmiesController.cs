@@ -94,6 +94,7 @@ public class EnenmiesController : MonoBehaviour
     {
         Destroy(enemy);
     }
+
     private void FreeSpawnPoint(SpawnPoint spawnPoint)
     {
         for (int i = 0; i < SpawnPoints.Count; i++)

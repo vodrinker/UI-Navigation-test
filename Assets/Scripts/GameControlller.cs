@@ -55,8 +55,6 @@ public class GameControlller : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
         }
     }
-    
-
 
     public bool IsCurrentLocalization(GameLocalization localiztion)
     {
